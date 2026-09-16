@@ -6,4 +6,7 @@
     <EmbeddedResource Include="Formatters\Default.css" />
     <Content Include="Serialization\Format.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="10.0.12" />
+  </ItemGroup>
 </Project>

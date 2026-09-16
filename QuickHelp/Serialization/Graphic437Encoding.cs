@@ -1,11 +1,17 @@
-﻿using System;
+using System;
 using System.Text;
 
 namespace QuickHelp.Serialization
 {
     public class Graphic437Encoding : Encoding
     {
-        private static readonly Encoding CP437 = Encoding.GetEncoding(437);
+        private static readonly Encoding CP437;
+
+        static Graphic437Encoding()
+        {
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+            CP437 = Encoding.GetEncoding(437);
+        }
         private const string GraphicCharacters = "\0☺☻♥♦♣♠•◘○◙♂♀♪♫☼►◄↕‼¶§▬↨↑↓→←∟↔▲▼";
 
         public static bool IsControlCharacter(char c)
